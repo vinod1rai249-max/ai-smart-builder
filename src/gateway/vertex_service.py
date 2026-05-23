@@ -5,24 +5,12 @@ from vertexai.generative_models import GenerativeModel, SafetySetting
 
 class VertexService:
     def __init__(self, project_id: Optional[str] = None, location: str = "us-central1"):
-        self.project_id = project_id or os.getenv("GOOGLE_CLOUD_PROJECT")
+        # Force use of Project Number for Vertex AI foundation model resolution
+        self.project_id = "1051385917818"
         self.location = location
         vertexai.init(project=self.project_id, location=self.location)
-        # Try to find a valid model alias
-        model_names = ["gemini-1.5-flash-002", "gemini-1.5-flash-001", "gemini-1.5-flash"]
-        for name in model_names:
-            try:
-                self.model = GenerativeModel(name)
-                # Test the model with a tiny probe
-                self.model.generate_content("ping")
-                print(f"Successfully initialized model: {name}")
-                break
-            except Exception as e:
-                print(f"Model {name} not available: {e}")
-                continue
-        else:
-            # Fallback to the most basic if all else fails
-            self.model = GenerativeModel("gemini-1.5-flash")
+        # Use the specific Gemini 2.0 Flash Lite ID
+        self.model = GenerativeModel("gemini-2.0-flash-lite-preview-001")
 
     def get_completion(self, prompt: str) -> str:
         """
