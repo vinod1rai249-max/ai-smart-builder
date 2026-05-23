@@ -8,7 +8,7 @@ class VertexService:
         self.project_id = project_id or os.getenv("GOOGLE_CLOUD_PROJECT")
         self.location = location
         vertexai.init(project=self.project_id, location=self.location)
-        self.model = GenerativeModel("gemini-1.5-flash-001")
+        self.model = GenerativeModel("gemini-1.5-flash")
 
     def get_completion(self, prompt: str) -> str:
         """
