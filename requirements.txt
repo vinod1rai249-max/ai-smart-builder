@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+google-cloud-dlp
+google-cloud-aiplatform
+google-cloud-discoveryengine
+requests
+google-cloud-storage
+google-cloud-bigquery
+vertexai
+loguru
