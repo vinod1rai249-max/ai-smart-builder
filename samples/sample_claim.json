@@ -1,0 +1,16 @@
+{
+  "claim_id": "CLM-998877",
+  "patient_name": "John Doe",
+  "patient_dob": "1980-05-15",
+  "provider_id": "PROV-12345",
+  "total_amount": 1500.00,
+  "currency": "USD",
+  "status": "submitted",
+  "line_items": [
+    {
+      "code": "99213",
+      "description": "Office visit",
+      "amount": 150.00
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Build outputs
+dist/
+build/
+.next/
+.out/
+coverage/
+
+# OS / editor
+.DS_Store
+.vscode/settings.json
+.idea/
+
+# Client-sensitive local files
+samples/raw/
+samples/private/
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+*.pdf
+
+# Logs
+*.log

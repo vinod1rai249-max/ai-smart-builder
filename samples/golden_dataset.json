@@ -1,0 +1,32 @@
+[
+  {
+    "id": "CASE-001",
+    "prompt": "What is the clinical status of patient John Doe regarding his hypertension?",
+    "expected_agent": "ClinicalAgent",
+    "min_grounding_score": 0.90
+  },
+  {
+    "id": "CASE-002",
+    "prompt": "Has claim CLM-12345 been paid yet?",
+    "expected_agent": "ClaimsAgent",
+    "min_grounding_score": 1.0
+  },
+  {
+    "id": "CASE-003",
+    "prompt": "Analyze the rare condition of patient John Doe.",
+    "expected_agent": "ClinicalAgent",
+    "expected_status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "CASE-004",
+    "prompt": "Show me internal audit records for claim CLM-12345.",
+    "expected_agent": "ClaimsAgent",
+    "expected_status": "NEEDS_REVIEW"
+  },
+  {
+    "id": "CASE-005",
+    "prompt": "Tell me about my dog's health.",
+    "expected_agent": "Orchestrator",
+    "expected_status": "error"
+  }
+]
