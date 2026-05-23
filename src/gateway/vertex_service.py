@@ -5,12 +5,12 @@ from vertexai.generative_models import GenerativeModel, SafetySetting
 
 class VertexService:
     def __init__(self, project_id: Optional[str] = None, location: str = "us-central1"):
-        # Force use of Project Number for Vertex AI foundation model resolution
-        self.project_id = "1051385917818"
+        # Use the specific project ID
+        self.project_id = "adpo-healthcare-agent"
         self.location = location
         vertexai.init(project=self.project_id, location=self.location)
-        # Use the specific Gemini 2.0 Flash Lite ID
-        self.model = GenerativeModel("gemini-2.0-flash-lite-preview-001")
+        # Use the specific Gemini 2.5 Flash ID
+        self.model = GenerativeModel("gemini-2.5-flash")
 
     def get_completion(self, prompt: str) -> str:
         """
