@@ -2,6 +2,7 @@ import os
 import uuid
 import time
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from .dlp_service import DLPService
 from .vertex_service import VertexService
@@ -10,6 +11,15 @@ from ..agents.orchestrator import Orchestrator
 from ..utils.logger import logger
 
 app = FastAPI(title="EHCCA AI Gateway Proxy")
+
+# Enable CORS for the UI
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Initialize services
 project_id = os.getenv("GOOGLE_CLOUD_PROJECT", "ehcca-dev-project")
